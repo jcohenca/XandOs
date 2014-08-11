@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'pry'
 gem 'rails-pry'
+gem 'mysql2'
 
 
 gem 'gon'
