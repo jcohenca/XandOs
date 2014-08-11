@@ -1,0 +1,38 @@
+class CreatePlays < ActiveRecord::Migration
+  def change
+    create_table :plays do |t|
+        t.integer "year"
+        t.integer "month"
+        t.integer "date"
+        t.string  "city"
+        t.integer "period"
+        t.float   "game_clock"
+        t.float   "shot_clock"
+        t.float   "ball_x"
+        t.float   "ball_y"
+        t.float   "o1_x"
+        t.float   "o1_y"
+        t.float   "o2_x"
+        t.float   "o2_y"
+        t.float   "o3_x"
+        t.float   "o3_y"
+        t.float   "o4_x"
+        t.float   "o4_y"
+        t.float   "o5_x"
+        t.float   "o5_y"
+        t.float   "d1_x"
+        t.float   "d1_y"
+        t.float   "d2_x"
+        t.float   "d2_y"
+        t.float   "d3_x"
+        t.float   "d3_y"
+        t.float   "d4_x"
+        t.float   "d4_y"
+        t.float   "d5_x"
+        t.float   "d5_y"
+        t.float   "expected_points"
+        t.integer "posession_id"
+        t.integer "sub_possession_id"
+    end
+  end
+end

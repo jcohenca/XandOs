@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery-ui
+ */
+
+
+body {
+  background-color: #2E66B2;
+}
+
+#chart1 {
+  padding: 20px;
+  background-color: #C0C0C0;
+  width: 666px;
+  height: 165px;
+  top: 532px;
+  left: 273px;
+  margin: auto;
+  font-size: 1.2em;
+  position: absolute;
+  border-radius: 5px;
+  z-index: -10;
+
+
+}
+
+#gc, #pos_id {
+  visibility:hidden;
+  width: 0;
+}
+
+#test {
+  padding: 20px;
+  background-color: #C0C0C0;
+  width: 178px;
+  height: 165px;
+  top: 532px;
+  left: 43px;
+  margin: auto;
+  font-size: 1.2em;
+  position: absolute;
+  border-radius: 5px;
+
+}
+
+.draggables {
+  cursor: move;
+  left: 0px;
+  top: 0px;
+}
+
+#o1, #o2, #o3, #o4, #o5, #x1, #x2, #x3, #x4, #x5, #ball {position: absolute; text-align: center; left: 0px; top: 0px; z-index: 6;}
+
+#shotclock {
+  position: absolute;
+  font-size: 3em;
+  border: 3px solid red;
+  width: 75px;
+  height: 61px;
+  background-color: black;
+  color: red;
+  top: 32px;
+  text-align: center;
+  left: 880px;
+  display: block;
+}
+
+
+#gameclock {
+  position: absolute;
+  font-size: 3em;
+  border: 3px solid #FF7518;
+  width: 150px;
+  height: 61px;
+  background-color: #2E66B2;
+  color: #C0C0C0;
+  top: 32px;
+  text-align: center;
+  left: 700px;
+  display: block;
+}
+
+#court {
+  position: absolute;
+  padding-left: 43px;
+  padding-right: 43px;
+  padding-top: 20px;
+  top: 0px;
+  left: 0;
+  z-index: 1;
+}
+
+#EP {
+  font-size: 1.7em;
+  color: #2E66B2;
+  top: 252px;
+  left: 486px;
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  text-align: center;
+}
+
+.offense-x, .offense-y, .defense-x, .defense-y, #ball-pos-x, #ball-pos-y, #combination {
+  visibility: hidden;
+}
+
+

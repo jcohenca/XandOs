@@ -1,0 +1,127 @@
+
+storedData = []
+
+function renderGraph() {
+    
+    plot1 = $.jqplot('chart1', [storedData],
+        { axes:{xaxis:{min:0, max: 200}, yaxis:{min:0, max: 100}}});
+
+}
+
+
+function clearGraph() {
+    storedData = []
+    if (plot1) {
+        plot1.destroy();
+    }
+}
+
+function loopFrames() {  
+
+
+       setTimeout(function () {  
+
+        // if (finalSearch.length <= 2) {finalSearch.length = 0;}
+
+        newData = [parseInt(output[finalSearch.length-1].ballY)]
+        newVal = newData.shift();
+        storedData.push(newVal);
+        
+
+        var time = parseInt(output[finalSearch.length-1].game_clock).toFixed(2)
+        var minutes = Math.floor(time / 60);
+        var seconds = time - minutes * 60;
+
+        var x_ratio = -0.10071382636655948
+        var y_ratio = 0.1006036217303823
+        
+        $('#shotclock').text(parseInt(output[finalSearch.length-1].shot_clock));
+        $('#ball').css('left', ((parseInt(output[finalSearch.length-1].ballX) / x_ratio) + 976) + 'px')
+        $('#ball').css("top", ((parseInt(output[finalSearch.length-1].ballY) / y_ratio) + 20) + 'px')
+
+        $('#x1').css('left', ((parseInt(output[finalSearch.length-1].p1X) / x_ratio) + 976) + 'px')
+        $('#x1').css("top",  ((parseInt(output[finalSearch.length-1].p1Y) / y_ratio) + 20) + 'px')
+        $('#x2').css('left', ((parseInt(output[finalSearch.length-1].p2X) / x_ratio) + 976) + 'px')
+        $('#x2').css("top",  ((parseInt(output[finalSearch.length-1].p2Y) / y_ratio) + 20) + 'px')
+        $('#x3').css('left', ((parseInt(output[finalSearch.length-1].p3X) / x_ratio) + 976) + 'px')
+        $('#x3').css("top",  ((parseInt(output[finalSearch.length-1].p3Y) / y_ratio) + 20) + 'px')
+        $('#x4').css('left', ((parseInt(output[finalSearch.length-1].p4X) / x_ratio) + 976) + 'px')
+        $('#x4').css("top",  ((parseInt(output[finalSearch.length-1].p4Y) / y_ratio) + 20) + 'px')
+        $('#x5').css('left', ((parseInt(output[finalSearch.length-1].p5X) / x_ratio) + 976) + 'px')
+        $('#x5').css("top",  ((parseInt(output[finalSearch.length-1].p5Y) / y_ratio) + 20) + 'px')
+
+        $('#o1').css('left', ((parseInt(output[finalSearch.length-1].p6X) / x_ratio) + 976) + 'px');
+        $('#o1').css("top",  ((parseInt(output[finalSearch.length-1].p6Y) / y_ratio) + 20) + 'px');
+        $('#o2').css('left', ((parseInt(output[finalSearch.length-1].p7X) / x_ratio) + 976) + 'px')
+        $('#o2').css("top",  ((parseInt(output[finalSearch.length-1].p7Y) / y_ratio) + 20) + 'px')
+        $('#o3').css('left', ((parseInt(output[finalSearch.length-1].p8X) / x_ratio) + 976) + 'px')
+        $('#o3').css("top",  ((parseInt(output[finalSearch.length-1].p8Y) / y_ratio) + 20) + 'px')
+        $('#o4').css('left', ((parseInt(output[finalSearch.length-1].p9X) / x_ratio) + 976) + 'px')
+        $('#o4').css("top",  ((parseInt(output[finalSearch.length-1].p9Y) / y_ratio) + 20) + 'px')
+        $('#o5').css('left', ((parseInt(output[finalSearch.length-1].p10X) / x_ratio) + 976) + 'px')
+        $('#o5').css("top",  ((parseInt(output[finalSearch.length-1].p10Y) / y_ratio) + 20) + 'px')
+        $('#EP').text(parseFloat(output[finalSearch.length-1].expected_points).toFixed(2));
+        $('#gameclock').text(minutes + ":" + seconds);
+
+        renderGraph();
+
+      // stopMethods()
+
+      if (--finalSearch.length-1) loopFrames() 
+            }, 40)
+   
+}; 
+
+function grabLocs() {
+    output = [];
+
+    for (i = 0; i < finalSearch.length; i++) {
+
+        output[i] = new Object();
+
+        output[i].shot_clock == finalSearch[i].shot_clock
+        output[i].ballX = finalSearch[i].ball_x
+        output[i].ballY = finalSearch[i].ball_y
+        output[i].p1X = finalSearch[i].d1_x
+        output[i].p1Y = finalSearch[i].d1_y
+        output[i].p2X = finalSearch[i].d2_x
+        output[i].p2Y = finalSearch[i].d2_y
+        output[i].p3X = finalSearch[i].d3_x
+        output[i].p3Y = finalSearch[i].d3_y
+        output[i].p4X = finalSearch[i].d4_x
+        output[i].p4Y = finalSearch[i].d4_y
+        output[i].p5X = finalSearch[i].d5_x
+        output[i].p5Y = finalSearch[i].d5_y
+        output[i].p6X = finalSearch[i].o1_x
+        output[i].p6Y = finalSearch[i].o1_y
+        output[i].p7X = finalSearch[i].o2_x
+        output[i].p7Y = finalSearch[i].o2_y
+        output[i].p8X = finalSearch[i].o3_x
+        output[i].p8Y = finalSearch[i].o3_y
+        output[i].p9X = finalSearch[i].o4_x
+        output[i].p9Y = finalSearch[i].o4_y
+        output[i].p10X = finalSearch[i].o5_x
+        output[i].p10Y = finalSearch[i].o5_y
+        output[i].expected_points = finalSearch[i].expected_points
+        output[i].game_clock = finalSearch[i].game_clock
+        output[i].id = finalSearch[i].id
+    }
+}
+
+
+function stop(){
+    flag = false;
+}
+function continueWithIt(){
+    flag = true;
+    foo();
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,262 @@
+
+
+
+        <div id="shotclock"></div>
+        <div id="gameclock"></div>
+
+        <div id="chart1"></div>
+        <input id="gc" name="gc"> </input>
+        <input id="pos_id" name="pos_id"> </input>
+
+
+        <div id="court"> <%= image_tag "final.png"%> </div>
+
+        <div class="draggables"> 
+            <div id="ball"><%=image_tag "lol.png"%></div>
+            <div id="o1"><%= image_tag "o.png" %></div>
+            <div id="o2"><%= image_tag "o.png" %></div>
+            <div id="o3"><%= image_tag "o.png" %></div>
+            <div id="o4"><%= image_tag "o.png" %></div>
+            <div id="o5"><%= image_tag "o.png" %></div>
+
+            <div id="x1"><%= image_tag "x.png" %></div>
+            <div id="x2"><%= image_tag "x.png" %></div>
+            <div id="x3"><%= image_tag "x.png" %></div>
+            <div id="x4"><%= image_tag "x.png" %></div>
+            <div id="x5"><%= image_tag "x.png" %></div>
+         </div>
+
+        <div id="ball-pos-x"></div> 
+        <div id="ball-pos-y"></div> 
+
+        <div class="offense-x">
+            <div id="results1-x"></div>
+            <div id="results2-x"></div>
+            <div id="results3-x"></div>
+            <div id="results4-x"></div>
+            <div id="results5-x"></div>
+        </div>
+
+        <div class="offense-y">
+            <div id="results1-y"></div>
+            <div id="results2-y"></div>
+            <div id="results3-y"></div>
+            <div id="results4-y"></div>
+            <div id="results5-y"></div>
+        </div>
+
+        <div class="defense-x">
+            <div id="results6-x"></div>
+            <div id="results7-x"></div>
+            <div id="results8-x"></div>
+            <div id="results9-x"></div>
+            <div id="results10-x"></div>
+        </div>
+
+        <div class="defense-y">
+            <div id="results6-y"></div>
+            <div id="results7-y"></div>
+            <div id="results8-y"></div>
+            <div id="results9-y"></div>
+            <div id="results10-y"></div>
+        </div>
+
+        <div id="EP"> EP </div>
+
+        <div id="combination"></div>
+
+
+
+        <div id="test"> 
+
+      <form action="/search" data-remote="true" method="post">
+        <label for="city">Team</label>
+        <select id="city" name="city"> 
+              <option>Boston</option>
+              <option>Brooklyn</option>
+              <option>New York</option>
+              <option>Philadelphia</option>
+              <option>Toronto</option>
+              <option>Chicago</option>
+              <option>Cleveland</option>
+              <option>Detroit</option>
+              <option>Indiana</option>
+              <option>Milwaukee</option>
+              <option>Atlanta</option>
+              <option>Charlotte</option>
+              <option>Miami</option>
+              <option>Orlando</option>
+              <option>Washington</option>
+              <option>Dallas</option>
+              <option>Houston</option>
+              <option>Memphis</option>
+              <option>New Orleans</option>
+              <option>San Antonio</option>
+              <option>Denver</option>
+              <option>Minnesota</option>
+              <option>Oklahoma City</option>
+              <option>Portland</option>
+              <option>Utah</option>
+              <option>Golden State</option>
+              <option>Los Angeles</option>
+              <option>Phoenix</option>
+              <option>Sacramento</option>
+            </select><br>
+
+          <label for="period">Quarter</label>
+          <select id="period" name="period"> 
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select><br>
+
+          <label for="minutes">Minutes</label>
+          <select id="minutes" name="minutes">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+          </select><br>
+
+          <label for="seconds">Seconds</label>
+          <select id="seconds" name="seconds">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+              <option>32</option>
+              <option>33</option>
+              <option>34</option>
+              <option>35</option>
+              <option>36</option>
+              <option>37</option>
+              <option>38</option>
+              <option>39</option>
+              <option>40</option>
+              <option>41</option>
+              <option>42</option>
+              <option>43</option>
+              <option>44</option>
+              <option>45</option>
+              <option>46</option>
+              <option>47</option>
+              <option>48</option>
+              <option>49</option>
+              <option>50</option>
+              <option>51</option>
+              <option>52</option>
+              <option>53</option>
+              <option>54</option>
+              <option>55</option>
+              <option>56</option>
+              <option>57</option>
+              <option>58</option>
+              <option>59</option>
+              <option>60</option>
+
+          </select><br>
+
+          <label for="year">Year</label>
+          <select id="year" name="year">
+              <option>2013</option>
+              <option>2014</option>
+          </select><br>
+
+          <label for="month">Month</label>
+          <select id="month" name="month">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+          </select><br>
+
+          <label for="date">Day</label>
+          <select id="date" name="date">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+          </select><br>
+          
+
+        <button id="search" onclick="parseGameClock(), setInterval(conditionalSearch, 100)">Submit</button>         
+        <button id="play" onclick="grabLocs(), loopFrames(), clearGraph()">Run Plays</button>
+
+        </div> 
+
+
+
+      

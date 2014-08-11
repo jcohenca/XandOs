@@ -1,0 +1,1 @@
+Gon.global.city = @city
