@@ -3,3 +3,10 @@ gc = parseGameClock()
 
 z = <%= @search.to_json.html_safe rescue "no image!" %>
 
+x = <% @search.each do |x| %>
+<%= x.posession_id %>
+<% end %>
+
+finalSearch = <%= @finalsearch.to_json.html_safe rescue "no image!" %>
+
+
