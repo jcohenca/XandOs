@@ -4,7 +4,7 @@ storedData = []
 function renderGraph() {
     
     plot1 = $.jqplot('chart1', [storedData],
-        { axes:{xaxis:{min:0, max: finalSearch.length, showTicks: false}, yaxis:{min:0.7, max: 1.45}}});
+        { axes:{xaxis:{min:0, max: (finalSearch.length * 2), showTicks: false}, yaxis:{min:0.75, max: 1.45}}});
 }
 
 function clearGraph() {
