@@ -10,21 +10,11 @@ class PlaysController < ApplicationController
 
 
     if @search.length > 10
-      @finalsearch = Play.where(:possession_id => @search.first.possession_id)
+      @finalsearch = Play.where(:possession_id => @search.first.possession_id).limit(350)
     end
 
 
-    # if @search.length < 1
-      # @search = Play.where("city = ?",'Phoenix').limit(100)
-      # @search = Play.where("city = ?", params[:city]).limit(100)
 
-      # @search = Play.find_by_sql("SELECT * FROM AnimatedXandOs_development.plays;")
-    # end
-
-
-    # if @search.length > 1
-    # @finalsearch = Play.where("posession_id = ?", params[:pos_id])
-    # end
 
     respond_to do |format|
         format.html {}
