@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808135907) do
+ActiveRecord::Schema.define(version: 20140811213408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,9 +46,10 @@ ActiveRecord::Schema.define(version: 20140808135907) do
     t.float   "d4_y"
     t.float   "d5_x"
     t.float   "d5_y"
-    t.float   "expected_points"
-    t.integer "posession_id"
+    t.integer "possession_id"
     t.integer "sub_possession_id"
+    t.integer "expected_points"
+    t.integer "smooth_expected_points"
   end
 
 end
