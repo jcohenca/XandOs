@@ -18,7 +18,6 @@ class PlaysController < ApplicationController
       @search = Play.where("city = ?", params[:city]).limit(100)
 
       # @search = Play.find_by_sql("SELECT * FROM AnimatedXandOs_development.plays;")
-      gon.search = @search
     # end
 
 
