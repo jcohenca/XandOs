@@ -4,7 +4,7 @@ storedData = []
 function renderGraph() {
     
     plot1 = $.jqplot('chart1', [storedData],
-        { axes:{xaxis:{min:0, max: 350}, yaxis:{min:0, max: 3}}});
+        { axes:{xaxis:{min:0, max: 300}, yaxis:{min:-2, max: 3}}});
 }
 
 function clearGraph() {
@@ -20,7 +20,7 @@ function loopFrames() {
 
         // if (finalSearch.length <= 2) {finalSearch.length = 0;}
 
-        newData = [parseInt(output[finalSearch.length-1].expected_points)]
+        newData = [parseInt(output[finalSearch.length-1].smooth_expected_points)]
         newVal = newData.shift();
         storedData.push(newVal);
         
@@ -102,6 +102,7 @@ function grabLocs() {
         output[i].expected_points = finalSearch[i].expected_points
         output[i].game_clock = finalSearch[i].game_clock
         output[i].id = finalSearch[i].id
+        output[i].smooth_expected_points = finalSearch[i].smooth_expected_points
     }
 }
 
