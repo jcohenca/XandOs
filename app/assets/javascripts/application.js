@@ -22,6 +22,8 @@
 
 $(document).ready(function() {
 
+    gc = parseGameClock()
+
     // Player positioning
 
     $('#ball').css('left', '329px').css("top", "298px").css("z-index", "1")
