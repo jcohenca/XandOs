@@ -20,7 +20,7 @@ function loopFrames() {
 
         // if (finalSearch.length <= 2) {finalSearch.length = 0;}
 
-        newData = [parseInt(output[finalSearch.length-1].smooth_expected_points)]
+        newData = [parseFloat(output[finalSearch.length-1].smooth_expected_points)]
         newVal = newData.shift();
         storedData.push(newVal);
         
