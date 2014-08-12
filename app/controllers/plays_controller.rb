@@ -17,7 +17,7 @@ class PlaysController < ApplicationController
     # if @search.length < 1
       # @search = Play.where("city = ?", params[:city]).limit(100)
 
-      @search = Play.find_by_sql("SELECT COUNT(1) FROM AnimatedXandOs_development.plays WHERE AnimatedXandOs.plays.city = 'Phoenix';")
+      @search = Play.find_by_sql("SELECT COUNT(1) FROM AnimatedXandOs_development.plays WHERE AnimatedXandOs_development.plays.city = 'Phoenix';")
     # end
 
 
