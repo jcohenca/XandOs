@@ -5,8 +5,7 @@
         <div id="gameclock"></div>
 
         <div id="chart1"></div>
-        <input id="gc" name="gc"> </input>
-        <input id="pos_id" name="pos_id"> </input>
+      
 
 
         <div id="court"> <%= image_tag "final.png"%> </div>
@@ -255,8 +254,11 @@
         <button id="search" onclick="parseGameClock(), setInterval(conditionalSearch, 100)">Submit</button>         
         <button id="play" onclick="grabLocs(), loopFrames(), clearGraph()">Run Plays</button>
 
-        </div> 
+        <input id="gc" name="gc"> </input>
+        <input id="pos_id" name="pos_id"> </input>
+
+        </form>
+      </div> 
 
 
 
-      
