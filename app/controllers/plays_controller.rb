@@ -10,7 +10,7 @@ class PlaysController < ApplicationController
 
 
     if @search.length > 10
-      @finalsearch = Play.where(:possession_id => @search.first.posession_id)
+      @finalsearch = Play.where(:possession_id => @search.first.possession_id)
     end
 
 
