@@ -75,6 +75,7 @@ body {
   text-align: center;
   left: 880px;
   display: block;
+  z-index: 2;
 }
 
 
@@ -90,6 +91,7 @@ body {
   text-align: center;
   left: 700px;
   display: block;
+  z-index: 2;
 }
 
 #court {

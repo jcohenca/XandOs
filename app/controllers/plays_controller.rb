@@ -10,7 +10,7 @@ class PlaysController < ApplicationController
 
 
     if @search.length > 10
-      @finalsearch = Play.where(:possession_id => @search.first.possession_id).limit(350)
+      @finalsearch = Play.where(:possession_id => @search.first.possession_id).limit(300)
     end
 
 
