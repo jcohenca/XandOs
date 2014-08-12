@@ -1,5 +1,5 @@
-
+x = gon.search 
 gc = parseGameClock()
 
-z = <%= @search.to_json.html_safe rescue "no image!" %>
+z = <%= @search.to_json.html_safe || 'null' %>
 
