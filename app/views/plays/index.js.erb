@@ -1,8 +1,8 @@
 
 gc = parseGameClock()
 
-z = <%= @search.to_json.html_safe unless @search.nil? %>
+z = <%= @search.to_json.html_safe rescue "no results!"%>
 
-finalSearch = <%= @finalsearch.to_json.html_safe unless @finalsearch.nil? %>
+finalSearch = <%= @finalsearch.to_json.html_safe rescue "no results!"%>
 
 
