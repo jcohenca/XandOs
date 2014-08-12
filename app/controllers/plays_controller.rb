@@ -9,9 +9,9 @@ class PlaysController < ApplicationController
  @search = Play.where("city = ? AND period = ? AND year = ? AND month = ? AND date = ?", params[:city], params[:period], params[:year], params[:month], params[:date]).order(shot_clock: :asc).limit(1000)
 
 
-    if @search.length > 10
-      @finalsearch = Play.where(:posession_id => @search.first.posession_id)
-    end
+    # if @search.length > 10
+    #   @finalsearch = Play.where(:posession_id => @search.first.posession_id)
+    # end
 
 
     # if @search.length < 1
