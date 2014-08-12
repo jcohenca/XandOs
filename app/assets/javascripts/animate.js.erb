@@ -5,9 +5,7 @@ function renderGraph() {
     
     plot1 = $.jqplot('chart1', [storedData],
         { axes:{xaxis:{min:0, max: 200}, yaxis:{min:0, max: 100}}});
-
 }
-
 
 function clearGraph() {
     storedData = []
@@ -18,12 +16,11 @@ function clearGraph() {
 
 function loopFrames() {  
 
-
        setTimeout(function () {  
 
         // if (finalSearch.length <= 2) {finalSearch.length = 0;}
 
-        newData = [parseInt(output[finalSearch.length-1].ballY)]
+        newData = [parseInt(output[finalSearch.length-1].expected_points)]
         newVal = newData.shift();
         storedData.push(newVal);
         
