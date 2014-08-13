@@ -9,7 +9,7 @@ class PlaysController < ApplicationController
     end
 
 
-    @possession_id = Play.where("possession_id = ?", params[:pos_id] )
+    @possession_id = Play.where("possession_id = ?", params[:pos_id])
 
     respond_to do |format|
         format.html {}
