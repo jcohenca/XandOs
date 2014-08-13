@@ -23,6 +23,7 @@ function clearGraph() {
     }
 }
 
+var loopCounter = 0;
 
 function loopFrames() {  
 
@@ -70,13 +71,16 @@ function loopFrames() {
         $('#EP').text(parseFloat(output[finalSearch.length-1].expected_points).toFixed(2));
         $('#gameclock').text(minutes + ":" + seconds);
 
-        //renderGraph();
+        if (loopCounter % 5 == 0) {
+            renderGraph();
+        }
 
       // stopMethods()
 
       if (--finalSearch.length-1) loopFrames() 
             }, 100)
-   
+
+   loopCounter++;
 }; 
 
 function grabLocs() {
