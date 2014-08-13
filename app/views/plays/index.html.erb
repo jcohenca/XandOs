@@ -69,6 +69,10 @@
         <div id="test"> 
 
       <form action="/search" data-remote="true" method="post">
+
+        <input id="pos_id" name="pos_id"> </input>
+
+       <!--  
         <label for="city">City</label>
         <select id="city" name="city"> 
               <option>Boston</option>
@@ -248,13 +252,13 @@
               <option>29</option>
               <option>30</option>
               <option>31</option>
-          </select><br>          
+          </select><br>           -->
 
         <button id="search" onclick="parseGameClock(), setInterval(conditionalSearch, 100)">Submit</button>         
         <button id="play" onclick="grabLocs(), storeArrayLength(), loopFrames(), clearGraph()">Run Plays</button>
 
         <input id="gc" name="gc"> </input>
-        <input id="pos_id" name="pos_id"> </input>
+        
 
         </form>
       </div> 
