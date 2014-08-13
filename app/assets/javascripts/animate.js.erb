@@ -5,6 +5,7 @@ function storeArrayLength() {
     graphWidth = finalSearch.length
     storedData = []
     k = finalSearch.length -1;
+    console.log(finalSearch)
 }
 
 function renderGraph() {
@@ -71,14 +72,14 @@ function loopFrames() {
         $('#EP').text(parseFloat(output[k].expected_points).toFixed(2));
         $('#gameclock').text(minutes + ":" + seconds);
 
-        if (loopCounter % 18 == 0) {
+        if (loopCounter % 12 == 0) {
             renderGraph();
         }
 
       // stopMethods()
 
       if (--k-1) loopFrames() 
-            }, 100)
+            }, 40)
 
    loopCounter++;
 }; 
