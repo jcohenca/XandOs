@@ -1,18 +1,15 @@
 storedData = []
+var plot1;
 
 function storeArrayLength() {
     graphWidth = finalSearch.length
 
-
-
-    plot1 = $.jqplot('chart1', [storedData],
-        { axes:{xaxis:{min:0, max: graphWidth, showTicks: false}, yaxis:{min:0.75, max: 1.7}}});
 }
 
 
 
 
-/*
+
 function renderGraph() {
     clearGraph();
     plot1 = $.jqplot('chart1', [storedData],
@@ -25,7 +22,7 @@ function clearGraph() {
         plot1.destroy();
     }
 }
-*/
+
 
 function loopFrames() {  
 
