@@ -1,10 +1,15 @@
+function storeArrayLength() {
+    graphWidth = finalSearch.length
+}
+
+
 
 storedData = []
 
 function renderGraph() {
     
     plot1 = $.jqplot('chart1', [storedData],
-        { axes:{xaxis:{min:0, max: (finalSearch.length * 5), showTicks: false}, yaxis:{min:0.75, max: 1.7}}});
+        { axes:{xaxis:{min:0, max: graphWidth, showTicks: false}, yaxis:{min:0.75, max: 1.7}}});
 }
 
 function clearGraph() {
@@ -18,7 +23,7 @@ function loopFrames() {
 
        setTimeout(function () {  
 
-        // if (finalSearch.length <= 2) {finalSearch.length = 0;}
+        if (finalSearch.length <= 2) {finalSearch.length = 0;}
 
         newData = [parseFloat(output[finalSearch.length-1].smooth_expected_points)]
         newVal = newData.shift();
@@ -65,7 +70,7 @@ function loopFrames() {
       // stopMethods()
 
       if (--finalSearch.length-1) loopFrames() 
-            }, 120)
+            }, 100)
    
 }; 
 

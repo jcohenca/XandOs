@@ -32,8 +32,6 @@ body {
   position: absolute;
   border-radius: 5px;
   z-index: -10;
-
-
 }
 
 #gc, #pos_id {
@@ -52,7 +50,6 @@ body {
   font-size: 1.2em;
   position: absolute;
   border-radius: 5px;
-
 }
 
 .draggables {
@@ -77,7 +74,6 @@ body {
   display: block;
   z-index: 2;
 }
-
 
 #gameclock {
   position: absolute;

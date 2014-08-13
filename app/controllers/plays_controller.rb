@@ -2,13 +2,10 @@ class PlaysController < ApplicationController
 
   def index
      
-    @search = Play.where("year = ? AND month = ? AND date = ? AND city = ? AND period = ? AND game_clock BETWEEN ? - 1.00 AND ? + 1.00", params[:year], params[:month], params[:date], params[:city], params[:period], params[:gc], params[:gc]).order(game_clock: :asc).limit(1000)
-
-    # @search = Play.where("city = ? AND period = ?", params[:city], params[:period]).order(shot_clock: :asc).limit(100)
-
+    @search = Play.where("year = ? AND month = ? AND date = ? AND city = ? AND period = ? AND game_clock BETWEEN ? - 1.00 AND ? + 1.00", params[:year], params[:month], params[:date], params[:city], params[:period], params[:gc], params[:gc]).order(game_clock: :desc).limit(1000)
 
     if @search.length > 10
-      @finalsearch = Play.where(:possession_id => @search.first.possession_id).order(game_clock: :asc).limit(300)
+      @finalsearch = Play.where(:possession_id => @search.first.possession_id).order(game_clock: :asc).limit(500)
     end
 
     respond_to do |format|
