@@ -9,7 +9,7 @@ class PlaysController < ApplicationController
     end
 
 
-    @possession_id = Play.where("possession_id = ?", params[:pos_id])
+    @possession_id = Play.where("possession_id = ?", params[:pos_id]).order(game_clock: :asc)
 
     respond_to do |format|
         format.html {}
