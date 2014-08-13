@@ -5,15 +5,16 @@ function storeArrayLength() {
 
 
 storedData = []
+plot1 
 
 function renderGraph() {
-    
+    clearGraph();
     plot1 = $.jqplot('chart1', [storedData],
         { axes:{xaxis:{min:0, max: graphWidth, showTicks: false}, yaxis:{min:0.75, max: 1.7}}});
+
 }
 
 function clearGraph() {
-    storedData = []
     if (plot1) {
         plot1.destroy();
     }
