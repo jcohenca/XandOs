@@ -111,6 +111,7 @@ body {
   height: 50px;
   padding: 0px;
   text-align: center;
+  z-index: 2;
 }
 
 .offense-x, .offense-y, .defense-x, .defense-y, #ball-pos-x, #ball-pos-y, #combination {
