@@ -66,7 +66,7 @@ for (var k = finalSearch.length - 1; k >= 0; k--) {
         $('#EP').text(parseFloat(output[k].expected_points).toFixed(2));
         $('#gameclock').text(minutes + ":" + seconds);
 
-        if (i % 18 == 0) {
+        if (k % 18 == 0) {
             renderGraph();
         }
 
