@@ -3,12 +3,8 @@ var plot1;
 
 function storeArrayLength() {
     graphWidth = finalSearch.length
-
+    storedData = []
 }
-
-
-
-
 
 function renderGraph() {
     clearGraph();
@@ -18,6 +14,7 @@ function renderGraph() {
 }
 
 function clearGraph() {
+
     if (plot1) {
         plot1.destroy();
     }
@@ -71,7 +68,7 @@ function loopFrames() {
         $('#EP').text(parseFloat(output[finalSearch.length-1].expected_points).toFixed(2));
         $('#gameclock').text(minutes + ":" + seconds);
 
-        if (loopCounter % 5 == 0) {
+        if (loopCounter % 10 == 0) {
             renderGraph();
         }
 
