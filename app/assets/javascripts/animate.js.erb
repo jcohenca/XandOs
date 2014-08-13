@@ -4,6 +4,7 @@ var plot1;
 function storeArrayLength() {
     graphWidth = finalSearch.length
     storedData = []
+    k = finalSearch.length -1;
 }
 
 function renderGraph() {
@@ -20,11 +21,14 @@ function clearGraph() {
     }
 }
 
+var loopCounter = 0;
+var k = 0;
 
 function loopFrames() {  
 
 
-for (var k = finalSearch.length - 1; k >= 0; k--) {
+       setTimeout(function () {  
+
 
         newData = [parseFloat(output[k].smooth_expected_points)]
         newVal = newData.shift();
@@ -66,20 +70,22 @@ for (var k = finalSearch.length - 1; k >= 0; k--) {
         $('#EP').text(parseFloat(output[k].expected_points).toFixed(2));
         $('#gameclock').text(minutes + ":" + seconds);
 
-        if (k % 18 == 0) {
+        if (loopCounter % 18 == 0) {
             renderGraph();
         }
 
-       setTimeout(function () { x = 0; }, 400);
+      // stopMethods()
 
-    }
+      if (--k-1) loopFrames() 
+            }, 100)
 
+   loopCounter++;
 }; 
 
 function grabLocs() {
     output = [];
 
-    for (var i = 0; i < finalSearch.length; i++) {
+    for (i = 0; i < finalSearch.length; i++) {
 
         output[i] = new Object();
 
