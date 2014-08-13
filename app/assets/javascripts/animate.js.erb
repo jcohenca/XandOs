@@ -10,7 +10,7 @@ function storeArrayLength() {
 function renderGraph() {
     clearGraph();
     plot1 = $.jqplot('chart1', [storedData],
-        { axes:{xaxis:{min:0, max: graphWidth, showTicks: false}, yaxis:{min:0.75, max: 1.7}}});
+        { axes:{xaxis:{min:0, max: graphWidth, showTicks: false}, yaxis:{min:Math.min.apply(Math,finalSearch.map(function(o){return o.expected_points;})), max: Math.max.apply(Math,finalSearch.map(function(o){return o.expected_points;}))}}});
 
 }
 
@@ -29,8 +29,9 @@ function loopFrames() {
 
        setTimeout(function () {  
 
+        // Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;}))
 
-        newData = [parseFloat(output[k].smooth_expected_points)]
+        newData = [parseFloat(output[k].expected_points)]
         newVal = newData.shift();
         storedData.push(newVal);
         
