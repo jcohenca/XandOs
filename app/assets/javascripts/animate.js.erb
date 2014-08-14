@@ -19,7 +19,7 @@ function renderGraph() {
     var yMin = parseFloat(Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) - .05
     var yMax = parseFloat(Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) + .05
     clearGraph();
-    plot1 = $.jqplot('chart1', [storedData],
+    plot1 = $.jqplot('chart1', [storedData], $.extend(options,
         { axes:
             {xaxis:
                 {min:0, max: graphWidth, showTicks: false}, showGridline: false,
@@ -28,8 +28,39 @@ function renderGraph() {
                  max: yMax + ((yMax - yMin) * .1), showGridline: false}
             }
         }
-        );
+        ));
 }
+
+options = {
+      grid: {
+          backgroundColor: "white",
+      },
+      axesDefaults: {
+          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+          {showGridline: false}
+      },
+      seriesDefaults: { // applies to all rows
+          lineWidth: 2,
+          style: 'square',
+          rendererOptions: { smooth: true }
+      },
+      highlighter: {
+          show: true,
+          sizeAdjust: 7.5
+      },
+      legend: {
+          renderer: $.jqplot.EnhancedLegendRenderer,
+          show: true,
+          showLabels: true,
+          location: 'ne',
+          placement: 'outside',
+          fontSize: '11px',
+          fontFamily: ["Lucida Grande","Lucida Sans Unicode","Arial","Verdana","sans-serif"],
+          rendererOptions: {
+              seriesToggle: 'normal'
+          }
+      }
+  };
 
 
 // function renderGraph() {
@@ -65,12 +96,12 @@ function loopFrames() {
 
         // Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;}))
 
-        newData = [parseFloat(output[k].smooth_expected_points)]
+        newData = [parseFloat(finalSearch[k].smooth_expected_points)]
         newVal = newData.shift();
         storedData.push(newVal);
         
 
-        var time = parseInt(output[k].game_clock).toFixed(2)
+        var time = parseInt(finalSearch[k].game_clock).toFixed(2)
         var minutes = pad( Math.floor(time / 60), 2)
         var seconds = pad( time - minutes * 60, 2)
         
@@ -79,36 +110,36 @@ function loopFrames() {
         var x_ratio = -0.10071382636655948
         var y_ratio = 0.1006036217303823
         
-        $('#shotclock').text(parseInt(output[k].shot_clock));
-        $('#ball').css('left', ((parseInt(output[k].ballX) / x_ratio) + 956) + 'px')
-        $('#ball').css("top", ((parseInt(output[k].ballY) / y_ratio) + 10) + 'px')
+        $('#shotclock').text(parseInt(finalSearch[k].shot_clock));
+        $('#ball').css('left', ((parseInt(finalSearch[k].ballX) / x_ratio) + 956) + 'px')
+        $('#ball').css("top", ((parseInt(finalSearch[k].ballY) / y_ratio) + 10) + 'px')
 
-        $('#x1').css('left', ((parseInt(output[k].p1X) / x_ratio) + 956) + 'px')
-        $('#x1').css("top",  ((parseInt(output[k].p1Y) / y_ratio) + 10) + 'px')
-        $('#x2').css('left', ((parseInt(output[k].p2X) / x_ratio) + 956) + 'px')
-        $('#x2').css("top",  ((parseInt(output[k].p2Y) / y_ratio) + 10) + 'px')
-        $('#x3').css('left', ((parseInt(output[k].p3X) / x_ratio) + 956) + 'px')
-        $('#x3').css("top",  ((parseInt(output[k].p3Y) / y_ratio) + 10) + 'px')
-        $('#x4').css('left', ((parseInt(output[k].p4X) / x_ratio) + 956) + 'px')
-        $('#x4').css("top",  ((parseInt(output[k].p4Y) / y_ratio) + 10) + 'px')
-        $('#x5').css('left', ((parseInt(output[k].p5X) / x_ratio) + 956) + 'px')
-        $('#x5').css("top",  ((parseInt(output[k].p5Y) / y_ratio) + 10) + 'px')
+        $('#x1').css('left', ((parseInt(finalSearch[k].p1X) / x_ratio) + 956) + 'px')
+        $('#x1').css("top",  ((parseInt(finalSearch[k].p1Y) / y_ratio) + 10) + 'px')
+        $('#x2').css('left', ((parseInt(finalSearch[k].p2X) / x_ratio) + 956) + 'px')
+        $('#x2').css("top",  ((parseInt(finalSearch[k].p2Y) / y_ratio) + 10) + 'px')
+        $('#x3').css('left', ((parseInt(finalSearch[k].p3X) / x_ratio) + 956) + 'px')
+        $('#x3').css("top",  ((parseInt(finalSearch[k].p3Y) / y_ratio) + 10) + 'px')
+        $('#x4').css('left', ((parseInt(finalSearch[k].p4X) / x_ratio) + 956) + 'px')
+        $('#x4').css("top",  ((parseInt(finalSearch[k].p4Y) / y_ratio) + 10) + 'px')
+        $('#x5').css('left', ((parseInt(finalSearch[k].p5X) / x_ratio) + 956) + 'px')
+        $('#x5').css("top",  ((parseInt(finalSearch[k].p5Y) / y_ratio) + 10) + 'px')
 
-        $('#o1').css('left', ((parseInt(output[k].p6X) / x_ratio) + 956) + 'px');
-        $('#o1').css("top",  ((parseInt(output[k].p6Y) / y_ratio) + 10) + 'px');
-        $('#o2').css('left', ((parseInt(output[k].p7X) / x_ratio) + 956) + 'px')
-        $('#o2').css("top",  ((parseInt(output[k].p7Y) / y_ratio) + 10) + 'px')
-        $('#o3').css('left', ((parseInt(output[k].p8X) / x_ratio) + 956) + 'px')
-        $('#o3').css("top",  ((parseInt(output[k].p8Y) / y_ratio) + 10) + 'px')
-        $('#o4').css('left', ((parseInt(output[k].p9X) / x_ratio) + 956) + 'px')
-        $('#o4').css("top",  ((parseInt(output[k].p9Y) / y_ratio) + 10) + 'px')
-        $('#o5').css('left', ((parseInt(output[k].p10X) / x_ratio) + 956) + 'px')
-        $('#o5').css("top",  ((parseInt(output[k].p10Y) / y_ratio) + 10) + 'px')
+        $('#o1').css('left', ((parseInt(finalSearch[k].p6X) / x_ratio) + 956) + 'px');
+        $('#o1').css("top",  ((parseInt(finalSearch[k].p6Y) / y_ratio) + 10) + 'px');
+        $('#o2').css('left', ((parseInt(finalSearch[k].p7X) / x_ratio) + 956) + 'px')
+        $('#o2').css("top",  ((parseInt(finalSearch[k].p7Y) / y_ratio) + 10) + 'px')
+        $('#o3').css('left', ((parseInt(finalSearch[k].p8X) / x_ratio) + 956) + 'px')
+        $('#o3').css("top",  ((parseInt(finalSearch[k].p8Y) / y_ratio) + 10) + 'px')
+        $('#o4').css('left', ((parseInt(finalSearch[k].p9X) / x_ratio) + 956) + 'px')
+        $('#o4').css("top",  ((parseInt(finalSearch[k].p9Y) / y_ratio) + 10) + 'px')
+        $('#o5').css('left', ((parseInt(finalSearch[k].p10X) / x_ratio) + 956) + 'px')
+        $('#o5').css("top",  ((parseInt(finalSearch[k].p10Y) / y_ratio) + 10) + 'px')
         $('#gameclock').text(minutes + ":" + seconds);
 
         if (loopCounter % 12 == 0) {
             renderGraph();
-            $('#EP').text(parseFloat(output[k].smooth_expected_points).toFixed(2));
+            $('#EP').text(parseFloat(finalSearch[k].smooth_expected_points).toFixed(2));
 
         }
 
@@ -121,7 +152,7 @@ function loopFrames() {
 }; 
 
 function grabLocs() {
-    output = [];
+    finalSearch = [];
 
     for (i = 0; i < finalSearch.length; i++) {
 
