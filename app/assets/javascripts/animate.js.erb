@@ -1,3 +1,10 @@
+
+function pad(str, max){
+  str = str.toString();
+  return str.length < max ? pad("0" + str, max) : str;
+}
+
+
 storedData = []
 var plot1;
 
@@ -15,7 +22,7 @@ function renderGraph() {
             {xaxis:
                 {min:0, max: graphWidth, showTicks: false},
              yaxis:
-                {min:parseFloat(Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) - .05,
+                {min: parseFloat(Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) - .05,
                  max: parseFloat(Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) + .05
                 }
             }
@@ -63,11 +70,10 @@ function loopFrames() {
         
 
         var time = parseInt(output[k].game_clock).toFixed(2)
-        var minutes = Math.floor(time / 60);
-        var seconds = time - minutes * 60;
-            if (seconds < 10) {
-
-            }
+        var minutes = pad( Math.floor(time / 60), 2)
+        var seconds = pad( time - minutes * 60, 2)
+        
+        // var finalGameClock = pad(minutes + ":" + seconds, 2)
 
         var x_ratio = -0.10071382636655948
         var y_ratio = 0.1006036217303823
@@ -158,8 +164,6 @@ function continueWithIt(){
     flag = true;
     foo();
 }
-
-
 
 
 
