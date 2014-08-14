@@ -23,9 +23,9 @@ body {
 #chart1 {
   padding: 20px;
   background-color: #C0C0C0;
-  width: 986px;
-  height: 165px;
-  top: 532px;
+  width: 906px;
+  height: 155px;
+  top: 522px;
   left: 43px;
   margin: auto;
   font-size: 1.2em;
@@ -43,14 +43,15 @@ body {
 #test {
   padding: 20px;
   background-color: #C0C0C0;
-  width: 178px;
-  height: 165px;
+  width: 138px;
+  height: 45px;
   top: 332px;
-  left: 753px;
+  left: 703px;
   margin: auto;
   font-size: 1.2em;
   position: absolute;
   border-radius: 5px;
+  z-index: 4;
 
 }
 
@@ -74,7 +75,7 @@ body {
   text-align: center;
   left: 880px;
   display: block;
-  z-index: 2;
+  z-index: 4;
 }
 
 #gameclock {
@@ -89,7 +90,7 @@ body {
   text-align: center;
   left: 700px;
   display: block;
-  z-index: 2;
+  z-index: 4;
 }
 
 #court {
@@ -99,7 +100,7 @@ body {
   padding-top: 20px;
   top: 0px;
   left: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 #EP {
@@ -113,7 +114,7 @@ body {
   height: 50px;
   padding: 0px;
   text-align: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .offense-x, .offense-y, .defense-x, .defense-y, #ball-pos-x, #ball-pos-y, #combination {
