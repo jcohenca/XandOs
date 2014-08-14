@@ -37,7 +37,7 @@ options = {
       },
       axesDefaults: {
           labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-          {showGridline: false}
+
       },
       seriesDefaults: { // applies to all rows
           lineWidth: 2,
@@ -151,51 +151,51 @@ function loopFrames() {
    loopCounter++;
 }; 
 
-function grabLocs() {
-    finalSearch = [];
+// function grabLocs() {
+//     finalSearch = [];
 
-    for (i = 0; i < finalSearch.length; i++) {
+//     for (i = 0; i < finalSearch.length; i++) {
 
-        output[i] = new Object();
+//         output[i] = new Object();
 
-        output[i].shot_clock = finalSearch[i].shot_clock
-        output[i].ballX = finalSearch[i].ball_x
-        output[i].ballY = finalSearch[i].ball_y
-        output[i].p1X = finalSearch[i].d1_x
-        output[i].p1Y = finalSearch[i].d1_y
-        output[i].p2X = finalSearch[i].d2_x
-        output[i].p2Y = finalSearch[i].d2_y
-        output[i].p3X = finalSearch[i].d3_x
-        output[i].p3Y = finalSearch[i].d3_y
-        output[i].p4X = finalSearch[i].d4_x
-        output[i].p4Y = finalSearch[i].d4_y
-        output[i].p5X = finalSearch[i].d5_x
-        output[i].p5Y = finalSearch[i].d5_y
-        output[i].p6X = finalSearch[i].o1_x
-        output[i].p6Y = finalSearch[i].o1_y
-        output[i].p7X = finalSearch[i].o2_x
-        output[i].p7Y = finalSearch[i].o2_y
-        output[i].p8X = finalSearch[i].o3_x
-        output[i].p8Y = finalSearch[i].o3_y
-        output[i].p9X = finalSearch[i].o4_x
-        output[i].p9Y = finalSearch[i].o4_y
-        output[i].p10X = finalSearch[i].o5_x
-        output[i].p10Y = finalSearch[i].o5_y
-        output[i].expected_points = finalSearch[i].expected_points
-        output[i].game_clock = finalSearch[i].game_clock
-        output[i].id = finalSearch[i].id
-        output[i].smooth_expected_points = finalSearch[i].smooth_expected_points
-    }
-}
+//         output[i].shot_clock = finalSearch[i].shot_clock
+//         output[i].ballX = finalSearch[i].ball_x
+//         output[i].ballY = finalSearch[i].ball_y
+//         output[i].p1X = finalSearch[i].d1_x
+//         output[i].p1Y = finalSearch[i].d1_y
+//         output[i].p2X = finalSearch[i].d2_x
+//         output[i].p2Y = finalSearch[i].d2_y
+//         output[i].p3X = finalSearch[i].d3_x
+//         output[i].p3Y = finalSearch[i].d3_y
+//         output[i].p4X = finalSearch[i].d4_x
+//         output[i].p4Y = finalSearch[i].d4_y
+//         output[i].p5X = finalSearch[i].d5_x
+//         output[i].p5Y = finalSearch[i].d5_y
+//         output[i].p6X = finalSearch[i].o1_x
+//         output[i].p6Y = finalSearch[i].o1_y
+//         output[i].p7X = finalSearch[i].o2_x
+//         output[i].p7Y = finalSearch[i].o2_y
+//         output[i].p8X = finalSearch[i].o3_x
+//         output[i].p8Y = finalSearch[i].o3_y
+//         output[i].p9X = finalSearch[i].o4_x
+//         output[i].p9Y = finalSearch[i].o4_y
+//         output[i].p10X = finalSearch[i].o5_x
+//         output[i].p10Y = finalSearch[i].o5_y
+//         output[i].expected_points = finalSearch[i].expected_points
+//         output[i].game_clock = finalSearch[i].game_clock
+//         output[i].id = finalSearch[i].id
+//         output[i].smooth_expected_points = finalSearch[i].smooth_expected_points
+//     }
+// }
 
 
-function stop(){
-    flag = false;
-}
-function continueWithIt(){
-    flag = true;
-    foo();
-}
+// function stop(){
+//     flag = false;
+// }
+// function continueWithIt(){
+//     flag = true;
+//     foo();
+// }
 
 
 
