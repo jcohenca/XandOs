@@ -40,12 +40,12 @@ body {
 }
 
 #test {
-  padding: 5px;
+  padding: 0px;
   /*background-color: #C0C0C0;*/
-  width: 150px;
+  width: 160px;
   height: 20px;
   top: 395px;
-  left: 786px;
+  left: 776px;
   margin: auto;
   font-size: 1em;
   position: absolute;
