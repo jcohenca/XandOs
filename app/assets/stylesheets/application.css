@@ -95,9 +95,9 @@ body {
 
 #court {
   position: absolute;
-  padding-left: 43px;
-  padding-right: 43px;
-  padding-top: 20px;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-top: 10px;
   top: 0px;
   left: 0;
   z-index: 1;
