@@ -22,11 +22,10 @@ function renderGraph() {
     plot1 = $.jqplot('chart1', [storedData],
         { axes:
             {xaxis:
-                {min:0, max: graphWidth, showTicks: false},
+                {min:0, max: graphWidth, showTicks: false}, showGridline: false,
              yaxis:
                 {min: yMin - ((yMax - yMin) * .1),
-                 max: yMax + ((yMax - yMin) * .1)  
-                }
+                 max: yMax + ((yMax - yMin) * .1), showGridline: false}
             }
         }
         );
