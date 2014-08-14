@@ -19,18 +19,49 @@ function renderGraph() {
     var yMin = parseFloat(Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) - .05
     var yMax = parseFloat(Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) + .05
     clearGraph();
-    plot1 = $.jqplot('chart1', [storedData],
+    plot1 = $.jqplot('chart1', [storedData], $.extend(options, 
         { axes:
             {xaxis:
                 {min:0, max: graphWidth, showTicks: false}, showGridline: false,
              yaxis:
                 {min: yMin - ((yMax - yMin) * .1),
                  max: yMax + ((yMax - yMin) * .1), showGridline: false}
+             }
             }
-        }
-        );
+        ));
 }
 
+options = {
+      grid: {
+          backgroundColor: "white",
+          drawGridLines: false,
+      },
+      series: seriesLabels, 
+      axesDefaults: {
+          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+      },
+      seriesDefaults: { // applies to all rows
+          lineWidth: 2,
+          style: 'square',
+          rendererOptions: { smooth: true }
+      },
+      highlighter: {
+          show: true,
+          sizeAdjust: 7.5
+      },
+      legend: {
+          renderer: $.jqplot.EnhancedLegendRenderer,
+          show: true,
+          showLabels: true,
+          location: 'ne',
+          placement: 'outside',
+          fontSize: '11px',
+          fontFamily: ["Lucida Grande","Lucida Sans Unicode","Arial","Verdana","sans-serif"],
+          rendererOptions: {
+              seriesToggle: 'normal'
+          }
+      }
+  };
 
 
 function clearGraph() {
@@ -45,10 +76,7 @@ var k = 0;
 
 function loopFrames() {  
 
-
        setTimeout(function () {  
-
-        // Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;}))
 
         newData = [parseFloat(output[k].smooth_expected_points)]
         newVal = newData.shift();
@@ -96,8 +124,6 @@ function loopFrames() {
             $('#EP').text(parseFloat(output[k].smooth_expected_points).toFixed(2));
 
         }
-
-      // stopMethods()
 
       if (--k-1) loopFrames() 
             }, 40)
