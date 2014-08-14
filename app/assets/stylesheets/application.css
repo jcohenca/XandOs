@@ -45,12 +45,13 @@ body {
   background-color: #C0C0C0;
   width: 178px;
   height: 165px;
-  top: 532px;
-  left: 43px;
+  top: 332px;
+  left: 903px;
   margin: auto;
   font-size: 1.2em;
   position: absolute;
   border-radius: 5px;
+
 }
 
 .draggables {
