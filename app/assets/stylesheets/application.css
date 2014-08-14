@@ -23,8 +23,8 @@ body {
 #chart1 {
   padding: 10px;
   background-color: #C0C0C0;
-  width: 878px;
-  height: 125px;
+  width: 938px;
+  height: 175px;
   top: 529px;
   left: 43px;
   margin: auto;
@@ -45,7 +45,7 @@ body {
   width: 126px;
   height: 20px;
   top: 430px;
-  left: 794px;
+  left: 814px;
   margin: auto;
   font-size: 1.2em;
   position: absolute;
