@@ -22,20 +22,22 @@ function renderGraph() {
     plot1 = $.jqplot('chart1', [storedData], $.extend(options, 
         { axes:
             {xaxis:
-                {min:0, max: graphWidth, showTicks: false}, showGridline: false,
+                {min:0, max: graphWidth, showTicks: false},
              yaxis:
                 {min: yMin - ((yMax - yMin) * .1),
                  max: yMax + ((yMax - yMin) * .1), showGridline: false}
              }
-            }));
+            }
+        ));
 }
 
-options = {
+  options = {
       grid: {
           backgroundColor: "white",
           drawGridLines: false
       }
-  };
+    }
+
 
 
 function clearGraph() {
