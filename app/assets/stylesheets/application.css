@@ -23,7 +23,7 @@ body {
 #chart1 {
   padding: 10px;
   background-color: #C0C0C0;
-  width: 868px;
+  width: 878px;
   height: 125px;
   top: 529px;
   left: 43px;
@@ -31,7 +31,6 @@ body {
   font-size: 1.2em;
   position: absolute;
   border-radius: 5px;
-  z-index: -10;
 }
 
 
