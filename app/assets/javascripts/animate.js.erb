@@ -27,33 +27,13 @@ function renderGraph() {
                 {min: yMin - ((yMax - yMin) * .1),
                  max: yMax + ((yMax - yMin) * .1), showGridline: false}
              }
-            }
-        ));
+            }));
 }
 
 options = {
       grid: {
           backgroundColor: "white",
-          drawGridLines: false,
-      },
-      axesDefaults: {
-          labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-      },
-      highlighter: {
-          show: true,
-          sizeAdjust: 7.5
-      },
-      legend: {
-          renderer: $.jqplot.EnhancedLegendRenderer,
-          show: true,
-          showLabels: true,
-          location: 'ne',
-          placement: 'outside',
-          fontSize: '11px',
-          fontFamily: ["Lucida Grande","Lucida Sans Unicode","Arial","Verdana","sans-serif"],
-          rendererOptions: {
-              seriesToggle: 'normal'
-          }
+          drawGridLines: false
       }
   };
 
