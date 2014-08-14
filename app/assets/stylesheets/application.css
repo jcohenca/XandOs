@@ -41,7 +41,7 @@ body {
 }
 
 #test {
-  padding: 20px;
+  padding: 5px;
   background-color: #C0C0C0;
   width: 126px;
   height: 20px;
@@ -59,6 +59,7 @@ body {
   cursor: move;
   left: 0px;
   top: 0px;
+  z-index: 12;
 }
 
 #o1, #o2, #o3, #o4, #o5, #x1, #x2, #x3, #x4, #x5, #ball {position: absolute; text-align: center; left: 0px; top: 0px; z-index: 6;}
