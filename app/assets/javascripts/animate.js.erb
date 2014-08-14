@@ -11,9 +11,34 @@ function storeArrayLength() {
 function renderGraph() {
     clearGraph();
     plot1 = $.jqplot('chart1', [storedData],
-        { axes:{xaxis:{min:0, max: graphWidth, showTicks: false}, yaxis:{min:parseFloat(Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) - .05, max: parseFloat(Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) + .05}}}
+        { axes:
+            {xaxis:
+                {min:0, max: graphWidth, showTicks: false},
+             yaxis:
+                {min:parseFloat(Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) - .05,
+                 max: parseFloat(Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})).toFixed(2)) + .05
+                }
+            }
+        }
         );
 }
+
+
+// function renderGraph() {
+//     var yMin = Math.min.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})) -.05
+//     var yMax = Math.max.apply(Math,finalSearch.map(function(o){return o.smooth_expected_points;})) +.05
+//     clearGraph();
+//     plot1 = $.jqplot('chart1', [storedData],
+//         { axes:
+//             {xaxis:
+//                 {min:0, max: graphWidth, showTicks: false},
+//              yaxis:
+//                 {min: yMin.toFixed(2),
+//                  max: yMax.toFixed(2)
+//                 }
+//             }
+//                   });
+// }
 
 function clearGraph() {
 
