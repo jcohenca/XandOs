@@ -42,11 +42,11 @@ body {
 
 #test {
   padding: 5px;
-  background-color: #C0C0C0;
+  /*background-color: #C0C0C0;*/
   width: 126px;
   height: 20px;
-  top: 425px;
-  left: 789px;
+  top: 430px;
+  left: 794px;
   margin: auto;
   font-size: 1.2em;
   position: absolute;
